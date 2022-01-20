@@ -1,23 +1,19 @@
 <template>
   <div class="home">
     <header class="header">
-        <div class="heade_div">
-          
+        <div class="heade_div"> 
           <img type src="../assets/logo.png" alt="logo">
           <h1 class="line1">LEANAFY</h1>
           <h3 class="">Let's Create the Lean Way!</h3>
         </div>
-
-      
-    </header>
-    <div class="content">
-      
-      
-      <h2 class="cont-1">COMING SOON</h2>
-
-    <section>
+     </header>
+     <video class="videobg" src="../assets/leanafy.mp4" autoplay muted loop></video>
+     <div class="overlay"></div>
+     
+    <div class="content">  
+     <h2 class="cont-1">COMING SOON</h2>
+     <section>
        <div class="hello">
-   
          <div class="days">{{displayDays}} :
          <label for="days">days</label>
          </div>
@@ -95,12 +91,12 @@ export default {
   display: grid;
   grid-row-start: 1;
   grid-row-end: 1.5;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(6, 53, 46, 0.5)), url('../assets/warehouse.jpg');
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(6, 53, 46, 0.5)), url('../assets/warehouse.jpg'); */
   height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   
 }
- .header{
+.header{
   color: white;
   font-weight: bold;
   font-size: 30px;
@@ -109,8 +105,8 @@ export default {
   /* height: 20vh; */
 } 
 .content{
-  font-family: 'Dongle', sans-serif;
-  color: rgb(180, 199, 216);
+  /* font-family: 'Mochiy Pop P One', sans-serif; */
+  color: rgb(220, 223, 228);
   font-weight: bold;
   font-size: 30px;
 }
@@ -123,19 +119,44 @@ img{
   background-color: black;
   
 }
+.home video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* right: 0; */
+  /* bottom: 0; */
+  object-fit: cover;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(rgba(0, 0, 0, 0.5),rgba(6, 53, 46, 0.5)) ;  
+  /* max-width: 100vw;
+  max-height: 100vh; */
+  /* width: 100vw; */
+}
+
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(53, 52, 52, 0.5);
+  mix-blend-mode: overlay;
+}
 .heade_div{
-  color: rgb(198, 228, 228);
+  color: azure;
   font-size: 18px;
   font-family: 'Nunito', sans-serif;
   letter-spacing: 4px;
+  margin-top: 10px;
   
 } 
-/* .counter{
-  display: flex; 
-  -ms-flex-flow: row;
-  -ms-flex-item-align: center;
-  align-items: center; 
-} */
+.line1{
+  margin-top: 10px;
+}
+
 .days{
   display: flex;
   flex-direction: column;
@@ -155,10 +176,11 @@ label{
   font-size: 12px;
   /* letter-spacing: 0; */
 }
-.cont-1{
-  font-family: 'Dongle', sans-serif;
+.cont-1{ 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   letter-spacing: 40px;
   font-weight: bold;
+  font-size: 30px;
   color: azure;
 }
 
